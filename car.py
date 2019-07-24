@@ -18,27 +18,28 @@ def car(user_input):
             if(not _running):
                 _running = True
                 print(
-                    f"{datetime.datetime.now().strftime('%B %d %Y %H:%M:%S')} > START ENGINE")
+                    f"{datetime.datetime.now().strftime('%B %d %Y %H:%M:%S')} > START ENGINE\n")
             else:
                 print(
-                    f"{datetime.datetime.now().strftime('%B %d %Y %H:%M:%S')} > INVALID COMMAND. ENGINE already started.")
+                    f"{datetime.datetime.now().strftime('%B %d %Y %H:%M:%S')} > INVALID COMMAND. ENGINE already started.\n")
 
         elif(user_input == "stop"):
             if(_running):
                 _running = False
                 print(
-                    f"{datetime.datetime.now().strftime('%B %d %Y %H:%M:%S')} > STOP ENGINE")
+                    f"{datetime.datetime.now().strftime('%B %d %Y %H:%M:%S')} > STOP ENGINE\n")
             else:
                 print(
-                    f"{datetime.datetime.now().strftime('%B %d %Y %H:%M:%S')} > INVALID COMMAND. ENGINE already stopped.")
+                    f"{datetime.datetime.now().strftime('%B %d %Y %H:%M:%S')} > INVALID COMMAND. ENGINE already stopped.\n")
 
         else:
             print(f"{datetime.datetime.now().strftime('%B %d %Y %H:%M:%S')} >",
-                  "Command not found. Type 'HELP' for engine commands or 'QUIT' to exit")
+                  "INVALID COMMAND. Type 'HELP' for engine commands or 'QUIT' to exit\n")
 
         user_input = input().lower()
 
     print(f"{datetime.datetime.now().strftime('%B %d %Y %H:%M:%S')} > Exit")
 
 
-car(input().lower())
+if(__name__ == "__main__"):
+    car(input().lower())
